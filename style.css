@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --highlight: #00b3ff;
+    --lightColor: #d8eeef;
+    --fontLogo: Titan One;
+    --fontHeading: Poppins;
+    --fontBody: Bai Jamjuree;
+}
+
+body{
+    background-color: var(--lightColor);
+    padding: 30px;
+    padding-top: 0;
+}
+
+.heading{
+    font-family: var(--fontHeading);
+}
+
+.para{
+    font-family: var(--fontBody);
+    opacity: 70%;
+}
+
+.highlight{
+    color: var(--highlight);
+}
+
+/* ...........Header Style........... */
+header{
+    background-color: var(--lightColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-top: 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.logo{
+    text-transform: capitalize;
+    font-family: var(--fontHeading);
+}
+
+/* Nav Bar Style */
+nav{
+    display: flex;
+    gap: 25px;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navItems>.navPara{
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--fontHeading);
+    text-transform: capitalize;
+    transition: color 0.2s linear, transform 0.2s linear;
+
+    &:hover{
+        color: var(--highlight);
+        transform: scale(1.2,1.2);
+    }
+}
+
+/* ............Hero Section........... */
+main{
+    z-index: -1;
+}
+
+.heroSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Background Small SVGs */
+.heroSection>.imageSection{
+    width: 150px;
+    position: absolute;
+    z-index: -1;
+    filter: blur(2px);
+}
+
+.svgSection1{
+    top: 50px;
+    left: 300px;
+}
+
+.svgSection2{
+    top: 200px;
+    left: 100px;
+}
+
+.svgSection3{
+    top: 300px;
+    right: 100px;
+}
+
+.svgSection4{
+    top: 100px;
+    right: 200px;
+}
+
+.svgSection5{
+    top: 300px;
+    right: 600px;
+}
+
+.svgSection6{
+    top: 400px;
+    right: 300px;
+}
+
+.svgSection7{
+    top: 300px;
+    left: 500px;
+}
+
+.svgSection8{
+    top: 400px;
+    left: 200px;
+}
+
+/* Details Of hero Section */
+.heroSection>.detailSection{
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroHeading{
+    font-size: 30px;
+    font-weight: bold;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+/* ......................Responsive For mobile and Tablet................. */
+@media (max-width:820px){
+    body, header{
+        padding: 10px;
+    }
+
+    /* Nav Bar Style */
+    .navItems{
+        display: none;
+    }
+}
