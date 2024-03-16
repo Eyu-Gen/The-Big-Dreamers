@@ -6,6 +6,7 @@
 
 :root{
     --highlight: #00b3ff;
+    --darkColor: #d0e4e5;
     --lightColor: #d8eeef;
     --fontLogo: Titan One;
     --fontHeading: Poppins;
@@ -16,6 +17,8 @@ body{
     background-color: var(--lightColor);
     padding: 30px;
     padding-top: 0;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .heading{
@@ -29,6 +32,13 @@ body{
 
 .highlight{
     color: var(--highlight);
+    font-weight: bold;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ...........Header Style........... */
@@ -81,9 +91,7 @@ main{
 }
 
 .heroSection{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 50px 20px;
     position: relative;
     min-height: 100vh;
     overflow: hidden;
@@ -95,7 +103,7 @@ main{
     width: 150px;
     position: absolute;
     z-index: -1;
-    filter: blur(2px);
+    filter: blur(5px);
 }
 
 .svgSection1{
@@ -119,27 +127,35 @@ main{
 }
 
 .svgSection5{
-    top: 300px;
-    right: 600px;
+    top: 200px;
+    right: 500px;
 }
 
 .svgSection6{
-    top: 400px;
-    right: 300px;
+    bottom: 100px;
+    right: 200px;
 }
 
 .svgSection7{
-    top: 300px;
+    bottom: 50px;
     left: 500px;
 }
 
 .svgSection8{
-    top: 400px;
+    bottom: 100px;
     left: 200px;
 }
 
 /* Details Of hero Section */
-.heroSection>.detailSection{
+.detailSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.detailSection>.paraSection{
     width: 60%;
     text-align: center;
     display: flex;
@@ -154,8 +170,68 @@ main{
     margin-bottom: 20px;
 }
 
-/* ......................Responsive For mobile and Tablet................. */
-@media (max-width:820px){
+/* Contents of Channel */
+.contentSection{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentSection>.subcontent{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 10px;
+    padding: 20px;
+    height: fit-content;
+    background-color: var(--darkColor);
+    border-radius: 20px;
+    transition: transform 0.2s linear, box-shadow 0.2s linear;
+
+    &:hover{
+        transform: scale(1.1,1.1);
+        box-shadow: 1px 1px 5px var(--highlight);
+    }
+}
+
+.subcontent>.imageSection{
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.subcontent>.heading{
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+
+.subcontent>.para{
+    font-size: 13px;
+}
+
+/* ......................Responsive For Tablets................... */
+@media (max-width:820px) and (min-width:550px){
+    .detailSection>.paraSection{
+        border: 1px solid red;
+        width: 80%;
+    }
+
+    .heroHeading{
+        border: 1px solid red;
+        width: 80%;
+    }
+
+    .contentSection{
+        
+    }
+}
+
+
+/* ......................Responsive For mobiles................... */
+@media (max-width:550px){
     body, header{
         padding: 10px;
     }
@@ -163,5 +239,72 @@ main{
     /* Nav Bar Style */
     .navItems{
         display: none;
+    }
+
+    /* HeroSection Style */
+    .heroSection{
+        width: 100%;
+    }
+
+    /* Background Images Style */
+    .heroSection>.imageSection{
+        width: 100px;
+    }
+    .svgSection1{
+        top: 0;
+        right: 0;
+    }
+    .svgSection2{
+        top: 900px;
+        left: 250px;
+    }
+    .svgSection3{
+        top: 400px;
+        left: 200px;
+    }
+    .svgSection4{
+        top: 650px;
+        left: 0;
+    }
+    .svgSection5{
+        top: 200px;
+        left: 20px;
+    }
+    .svgSection6{
+        bottom: 400px;
+        left: 10px;
+    }
+    .svgSection7{
+        bottom: 150px;
+        right: 0px;
+    }
+    .svgSection8{
+        bottom: 0;
+        left: 0;
+    }
+    
+    /* Hero Paragraph Style */   
+    .detailSection>.paraSection{
+        width: 100%;
+        align-items: start;
+        text-align: justify;
+    }
+    
+    .heroHeading{
+        width: 90%;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    /* Content Of Channel */
+    .contentSection{
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .contentSection>.subcontent{
+        width: 100%;
+        box-shadow: 1px 1px 5px var(--highlight);
     }
 }
