@@ -41,6 +41,21 @@ img{
     object-fit: cover;
 }
 
+.marginTop{
+    width: 100%;
+    height: 70px;
+}
+
+.videoLink{
+    color: black;
+    transition: color 0.2s linear;
+
+    &:active{
+        color: var(--highlight);
+        text-decoration: none;
+    }
+}
+
 /* ...........Header Style........... */
 header{
     background-color: var(--lightColor);
@@ -91,9 +106,9 @@ main{
 }
 
 .heroSection{
-    padding: 50px 20px;
+    padding: 30px;
+    padding-top: 0;
     position: relative;
-    min-height: 100vh;
     overflow: hidden;
     z-index: 1;
 }
@@ -153,21 +168,20 @@ main{
     align-items: center;
     gap: 50px;
 
-}
-
-.detailSection>.paraSection{
+    .paraSection{
     width: 60%;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    }
 
-.heroHeading{
+    .heroHeading{
     font-size: 30px;
     font-weight: bold;
-    width: 50%;
+    width: 60%;
     margin-bottom: 20px;
+    }
 }
 
 /* Contents of Channel */
@@ -175,42 +189,102 @@ main{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-}
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    
+    .subcontent{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        gap: 10px;
+        padding: 20px;
+        height: fit-content;
+        background-color: var(--darkColor);
+        border-radius: 20px;
+        transition: transform 0.2s linear, box-shadow 0.2s linear;
+    
+        &:hover{
+            transform: scale(1.1,1.1);
+            box-shadow: 1px 1px 5px var(--highlight);
+        }
 
-.contentSection>.subcontent{
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    gap: 10px;
-    padding: 20px;
-    height: fit-content;
-    background-color: var(--darkColor);
-    border-radius: 20px;
-    transition: transform 0.2s linear, box-shadow 0.2s linear;
+        .imageSection{
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
 
-    &:hover{
-        transform: scale(1.1,1.1);
-        box-shadow: 1px 1px 5px var(--highlight);
+        .heading{
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+        }
+
+        .para{
+            font-size: 13px;
+        }
     }
 }
 
-.subcontent>.imageSection{
-    width: 100%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
+/* ..............Video Section............. */
+.videoSection{
+    padding: 30px;
+    padding-top: 0;
+
+    .paraSection{
+        text-align: center;
+
+        .heading{
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+
+    .thumbnailTitle{
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-decoration: underline;
+
+        &::after{
+            position: absolute;
+            content: "'";
+        }
+        
+        &::before{
+            content: "'";
+        }
+    }
+
+    .thumbnailGroup{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        
+        .thumbnailSection{
+            width: 300px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px grey;
+            
+            .thumbnail{
+                aspect-ratio: 16/9;
+            }
+            
+            .videoTitle{
+            }
+        }
+        
+    }
 }
 
-.subcontent>.heading{
-    font-weight: 600;
-    text-align: center;
-    width: 100%;
-}
-
-.subcontent>.para{
-    font-size: 13px;
-}
 
 /* ......................Responsive For Tablets................... */
 @media (max-width:820px) and (min-width:550px){
@@ -225,8 +299,10 @@ main{
     }
 
     .contentSection{
-        
+        justify-content: center;
+        gap: 100px;
     }
+
 }
 
 
@@ -284,16 +360,18 @@ main{
     }
     
     /* Hero Paragraph Style */   
-    .detailSection>.paraSection{
-        width: 100%;
-        align-items: start;
-        text-align: justify;
-    }
+    .detailSection{
+        .paraSection{
+            width: 100%;
+            align-items: start;
+            text-align: justify;
+        }
     
-    .heroHeading{
-        width: 90%;
-        font-size: 20px;
-        text-align: left;
+        .heroHeading{
+            width: 90%;
+            font-size: 20px;
+            text-align: left;
+        }
     }
 
     /* Content Of Channel */
@@ -301,10 +379,16 @@ main{
         flex-direction: column;
         gap: 30px;
         padding: 30px;
+
+        .subcontent{
+            box-shadow: 1px 1px 5px var(--highlight);
+        }
     }
 
-    .contentSection>.subcontent{
-        width: 100%;
-        box-shadow: 1px 1px 5px var(--highlight);
+    /*........ Video Section .......*/
+    .videoSection{
+        .thumbnailGroup{
+            gap: 20px;
+        }
     }
 }
