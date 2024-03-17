@@ -15,7 +15,6 @@
 
 body{
     background-color: var(--lightColor);
-    /* padding: 30px; */
     padding-top: 0;
     max-width: 1440px;
     margin: 0 auto;
@@ -424,6 +423,7 @@ main{
             
             .para{
                 display: none;
+                height: 20px;
             }
         }
     }
@@ -439,19 +439,24 @@ main{
         grid-template-columns: auto auto auto auto;
         gap: 50px;
         place-content: center;
-
+        
         .content{
             padding: 10px;
             border-radius: 10px;
             overflow: hidden;
             background-color: var(--darkColor);
+            -webkit-tap-highlight-color: transparent;
+
+            &:hover{
+                text-shadow: 1px 1px 5px var(--highlight);
+            }
             
             .imageSection{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                aspect-ratio: 1/1;
                 margin-bottom: 10px;
+                height: 70%;
             }
 
             .heading{
@@ -462,7 +467,7 @@ main{
     }
 }
 
-/* Status Section */
+/* ...........Status Section............ */
 .statusSection{
     padding: 30px;
     padding-top: 0;
@@ -487,6 +492,7 @@ main{
             box-shadow: 2px 2px 20px white;
             transition: color 0.3s linear, background-color 0.3s linear, box-shadow 0.3s linear;
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
             
             &:hover{
                 color: black;
@@ -715,7 +721,7 @@ main{
     }
 }
 
-/* Footer/Contact Us Section */
+/* ............Footer/Contact Us Section......... */
 footer{
     padding: 30px;
     padding-top: 0;
@@ -785,6 +791,8 @@ footer{
             display: flex;
             align-items: center;
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+
         }
     }
 
@@ -855,7 +863,7 @@ footer{
     }
 
     .marginTop{
-        display: none;
+        height: 60px;
     }
 
     /* Nav Bar Style */
