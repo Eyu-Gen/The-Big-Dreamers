@@ -15,7 +15,7 @@
 
 body{
     background-color: var(--lightColor);
-    padding: 30px;
+    /* padding: 30px; */
     padding-top: 0;
     max-width: 1440px;
     margin: 0 auto;
@@ -44,7 +44,6 @@ img{
 .marginTop{
     width: 100%;
     height: 70px;
-    background-color: black;
 }
 
 .videoLink{
@@ -93,12 +92,12 @@ a{
     text-decoration: none;
     cursor: pointer;
     color: black;
+    font-family: var(--fontHeading);
 }
 
 .navItems>.navPara{
     font-size: 14px;
     font-weight: 500;
-    font-family: var(--fontHeading);
     text-transform: capitalize;
     transition: color 0.2s linear, transform 0.2s linear;
 
@@ -111,6 +110,7 @@ a{
 /* ............Hero Section........... */
 main{
     z-index: -1;
+    padding: 30px;
 }
 
 .heroSection{
@@ -432,6 +432,7 @@ main{
 /* ...........Memories section.......... */
 .memorieSection{
     padding: 30px;
+    padding-top: 0;
 
     .memoriesGroup{
         display: grid;
@@ -461,19 +462,358 @@ main{
     }
 }
 
-/* ...........Status Section.......... */
+/* Status Section */
+.statusSection{
+    padding: 30px;
+    padding-top: 0;
+
+    .statusGroup{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        
+        .content{
+            padding: 10px;
+            width: 20%;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 20px;
+            background-color: black;
+            color: white;
+            box-shadow: 2px 2px 20px white;
+            transition: color 0.3s linear, background-color 0.3s linear, box-shadow 0.3s linear;
+            cursor: pointer;
+            
+            &:hover{
+                color: black;
+                background-color: white;
+                box-shadow: 2px 2px 20px black;
+            }
+
+            .subContent{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                .heading{
+                    font-weight: 500;
+                }
+
+                .imageSection{
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .Stats{
+                font-size: 40px;
+                font-weight: 600;
+                margin: 0;
+            }
+        }
+        }
+
+    .audienceGroup{
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        
+        .subscriberSection{
+            width: 30%;
+            padding: 30px;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px grey;
+
+            .heading{
+                font-weight: 500;
+                font-style: italic;
+                text-decoration: underline;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .titleSection{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+            }
+
+            .bar{
+                background-color: rgb(147, 254, 165);
+                display: flex;
+                border-radius: 10px;
+                overflow: hidden;
+
+                .part1{
+                    width: 55%;
+                    height: 10px;
+                    background-color: var(--highlight);
+                 }
+            }
+            
+            .genderSection{
+                margin-top: 20px;
+
+                .bar{
+                    width: 100%;
+                    height: 10px;
+
+                    .male{
+                        width: 60%;
+                        height: 10px;
+                        background-color: var(--highlight);
+                    }
+                    
+                    .female{
+                        width: 35%;
+                        height: 10px;
+                    }
+
+                    .others{
+                        background-color: grey;
+                        width: 5%;
+                        height: 10px;
+                    }
+                }
+
+                .subcontent{
+                    display: flex;
+                    align-items: center;
+                    margin: 10px;
+                    
+                    .circle{
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 10px;
+                        border-radius: 50%;
+                    }
+
+                    .maleCircle{
+                        background-color: var(--highlight);
+                    }
+
+                    .femaleCircle{
+                        background-color: rgb(147, 254, 165);
+                    }
+                    
+                    .othersCircle{
+                        background-color: grey;
+                    }
+
+                    .gender{
+                        margin: 0;
+                        text-decoration: none;
+                        font-style: normal;
+                        font-weight: 400;
+                    }
+                }
+            }
+        
+        }
+
+        .geographySection{
+            width: 40%;
+            padding: 30px;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px grey;
+
+            .heading{
+                font-weight: 500;
+                font-style: italic;
+                text-decoration: underline;
+                text-align: center;
+            }
+
+            .bar{
+                width: 100%;
+                height: 10px;
+                border-radius: 10px;
+                background-color: #00b3ff;
+                overflow: hidden;
+                display: flex;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                
+                .part1{
+                    width: 50%;
+                    height: 10px;
+                    background-color: rgb(125, 125, 253);
+                }
+                
+                .part2{
+                    width: 20%;
+                    height: 10px;
+                    background-color: rgb(123, 250, 121);
+                }
+                
+                .part3{
+                    width: 15%;
+                    height: 10px;
+                    background-color: rgb(245, 253, 89);
+                }
+                
+                .part4{
+                    width: 10%;
+                    height: 10px;
+                    background-color: rgb(225, 220, 220);
+                }
+                
+                .part5{
+                    width: 5%;
+                    height: 10px;
+                    background-color: rgb(255, 120, 120);
+                }
+            }
+
+            .subcontent{
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+
+                .title{
+                    text-align: left;
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: 400;
+                }
+                
+                .circle{
+                    margin-right: 10px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: black;
+                }
+                
+                .part1{
+                    background-color: rgb(125, 125, 253);
+                }
+
+                .part2{
+                    background-color: rgb(123, 250, 121);
+                }
+
+                .part3{
+                    background-color: rgb(245, 253, 89);
+                }
+
+                .part4{
+                background-color: rgb(225, 220, 220);
+                }
+
+                .part5{
+                    background-color: rgb(255, 120, 120);
+                }
+            }
+        }
+    }
+}
+
+/* Footer/Contact Us Section */
+footer{
+    padding: 30px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--darkColor);
+
+    .footerGroup{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        margin: 30px;
+        
+        .content{
+            width: 30%;
+        }
+        
+        .contactSection{
+            .subcontent{
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+    
+                .imageSection{
+                    margin-right: 10px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .shortcutSection{
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 20px;
+
+            .footerItems{
+                font-weight: 500;
+                width: fit-content;
+                transition: color 0.3s linear, transform 0.3s linear;
+
+                &:hover{
+                    transform: scale(1.1,1.1);
+                    color: var(--highlight);
+                }
+            }
+        }
+    }
+
+    .socialmediaSection{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        margin: 20px 0px;
+
+        hr{
+            width: 30%;
+            border: 1px solid black;
+        }
+
+        .imageSection{
+            width: 40px;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+
+    .paraSection{
+        text-align: center;
+        margin-top: 20px;
+
+        .para{
+            .copyrightLogo{
+                margin-right: 3px;
+            }
+        }
+    }
+
+}
 
 
 
 /* ......................Responsive For Tablets................... */
 @media (max-width:820px) and (min-width:550px){
+    .para{
+        font-size: 14px;
+    }
+
     .detailSection>.paraSection{
-        border: 1px solid red;
         width: 80%;
     }
 
     .heroHeading{
-        border: 1px solid red;
         width: 80%;
     }
 
@@ -488,14 +828,34 @@ main{
         }
     }
 
+    .statusSection{
+
+        .statusGroup{
+            .content{
+                width: 30%;
+            }
+        }
+
+        .audienceGroup{
+
+            .content{
+                width: 50%;
+            }
+        }
+    }
+
 }
 
 
 
 /* ......................Responsive For mobiles................... */
 @media (max-width:550px){
-    body, header{
+    main, header{
         padding: 10px;
+    }
+
+    .marginTop{
+        display: none;
     }
 
     /* Nav Bar Style */
@@ -506,6 +866,10 @@ main{
     /* HeroSection Style */
     .heroSection{
         width: 100%;
+    }
+
+    .para{
+        font-size: 12px;
     }
 
     /* Background Images Style */
@@ -598,6 +962,65 @@ main{
 
             .content{
                 width: 300px;
+            }
+        }
+    }
+
+    
+    /* ...........Status Section.......... */
+    .statusSection{
+        .statusGroup{
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 30px;
+            
+            .content{
+                width: 80%;
+            }
+        }
+        
+
+        .audienceGroup{
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+
+            .content{
+                width: 90%;
+            }
+        }
+
+    }
+
+    /* Footer Section */
+    footer{
+        padding: 10px;
+        
+        .footerGroup{
+            flex-direction: column;
+            gap: 30px;
+
+            .content{
+                width: 100%;
+            }   
+            
+            .shortcutSection{
+                grid-template-columns: auto;
+                gap: 5px;
+
+                .footerItems{
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .socialmediaSection{
+            width: 100%;
+            margin: 0;
+
+            .imageSection{
+                width: 20px;
             }
         }
     }
