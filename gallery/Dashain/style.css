@@ -54,6 +54,11 @@ a{
     font-family: var(--fontHeading);
 }
 
+.logo{
+    text-transform: capitalize;
+    font-family: var(--fontHeading);
+}
+
 
 /* .............Header Section.............. */
 header{
@@ -67,11 +72,6 @@ header{
     top: 0;
     width: 100%;
     z-index: 2;
-
-    .logo{
-        text-transform: capitalize;
-        font-family: var(--fontHeading);
-    }
 
     nav{
         display: flex;
@@ -144,6 +144,94 @@ main{
     }
 }
 
+/* ............Footer/Contact Us Section......... */
+footer{
+    padding: 30px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--darkColor);
+
+    .footerGroup{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        margin: 30px;
+        
+        .content{
+            width: 30%;
+        }
+        
+        .contactSection{
+            .subcontent{
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+    
+                .imageSection{
+                    margin-right: 10px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .shortcutSection{
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 20px;
+
+            .footerItems{
+                font-weight: 500;
+                width: fit-content;
+                transition: color 0.3s linear, transform 0.3s linear;
+
+                &:hover{
+                    transform: scale(1.1,1.1);
+                    color: var(--highlight);
+                }
+            }
+        }
+    }
+
+    .socialmediaSection{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        margin: 20px 0px;
+
+        hr{
+            width: 30%;
+            border: 1px solid black;
+        }
+
+        .imageSection{
+            width: 40px;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+
+        }
+    }
+
+    .paraSection{
+        text-align: center;
+        margin-top: 20px;
+
+        .para{
+            .copyrightLogo{
+                margin-right: 3px;
+            }
+        }
+    }
+
+}
+
 
 /* ...........Responsive For Mobiles and Tablets........... */
 @media (max-width:550px) {
@@ -162,8 +250,44 @@ main{
     main{
         padding: 20px;
 
-        .gallerySection{
-            grid-template-columns: auto;
+        .container{
+            margin-top: 20px;
+            
+            .gallerySection{
+                grid-template-columns: auto;
+            }
         }
     }
+
+        /* Footer Section */
+        footer{
+            padding: 10px;
+            
+            .footerGroup{
+                flex-direction: column;
+                gap: 30px;
+    
+                .content{
+                    width: 100%;
+                }   
+                
+                .shortcutSection{
+                    grid-template-columns: auto;
+                    gap: 5px;
+    
+                    .footerItems{
+                        font-size: 13px;
+                    }
+                }
+            }
+    
+            .socialmediaSection{
+                width: 100%;
+                margin: 0;
+    
+                .imageSection{
+                    width: 20px;
+                }
+            }
+        }
 }
