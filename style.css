@@ -114,6 +114,7 @@ a{
 main{
     z-index: -1;
     padding: 30px;
+    padding: 0;
 }
 
 .heroSection{
@@ -231,6 +232,7 @@ main{
             font-weight: 600;
             text-align: center;
             width: 100%;
+            
         }
 
         .para{
