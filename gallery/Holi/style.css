@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --highlight: #00b3ff;
+    --darkColor: #d0e4e5;
+    --lightColor: #d8eeef;
+    --fontLogo: Titan One;
+    --fontHeading: Poppins;
+    --fontBody: Bai Jamjuree;
+}
+
+body{
+    background-color: var(--lightColor);
+    padding-top: 0;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.heading{
+    font-family: var(--fontHeading);
+}
+
+.para{
+    font-family: var(--fontBody);
+    opacity: 70%;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.marginTop{
+    width: 100%;
+    height: 60px;
+}
+
+.sectionHeading{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.logo{
+    text-transform: capitalize;
+    font-family: var(--fontHeading);
+}
+
+.highlight{
+    color: var(--highlight);
+}
+
+
+/* .............Header Section.............. */
+header{
+    background-color: var(--lightColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+/* ..............Main Section................. */
+main{
+    padding: 50px;
+    padding-top: 0;
+
+    .gallerySection{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+        width: 100%;
+
+        .collage{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            .imageSection{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+                &:hover{
+                    .labelSection{
+                        display: block;
+                    }
+                }
+
+                img{
+                    z-index: -1;
+                }
+
+                .labelSection{
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, 0.664);
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    padding: 10px;
+                    color: white;
+                    font-weight: 600;
+                    display: none;
+                }
+            }
+
+            .subCollage{
+                display: flex;
+                gap: 20px;
+            }
+        }
+    }
+}
+
+/* ............Footer/Contact Us Section......... */
+footer{
+    padding: 30px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--darkColor);
+
+    .footerGroup{
+        display: flex;
+        width: 80%;
+        margin: 30px;
+        
+        .content{
+            width: 30%;
+        }
+        
+        .contactSection{
+            .subcontent{
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+    
+                .imageSection{
+                    margin-right: 10px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .socialmediaSection{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        margin: 20px 0px;
+
+        hr{
+            width: 30%;
+            border: 1px solid black;
+        }
+
+        .imageSection{
+            width: 40px;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+
+        }
+    }
+
+    .paraSection{
+        text-align: center;
+        margin-top: 20px;
+
+        .para{
+            .copyrightLogo{
+                margin-right: 3px;
+            }
+        }
+    }
+
+}
+
+
+/* ...........Responsive For Mobiles and Tablets........... */
+@media (max-width:550px) {
+    .marginTop{
+        display: none;
+    }
+
+    /* Header Section */
+    header{
+        nav{
+            display: none;
+        }
+    }
+
+    /* Main Section */
+    main{
+        padding: 20px;
+
+        .container{
+            margin-top: 20px;
+            
+            .gallerySection{
+                grid-template-columns: auto;
+            }
+        }
+    }
+
+        /* Footer Section */
+        footer{
+            padding: 10px;
+            
+            .footerGroup{
+                flex-direction: column;
+                gap: 30px;
+    
+                .content{
+                    width: 100%;
+                }   
+                
+                .shortcutSection{
+                    grid-template-columns: auto;
+                    gap: 5px;
+    
+                    .footerItems{
+                        font-size: 13px;
+                    }
+                }
+            }
+    
+            .socialmediaSection{
+                width: 100%;
+                margin: 0;
+    
+                .imageSection{
+                    width: 20px;
+                }
+            }
+        }
+}
