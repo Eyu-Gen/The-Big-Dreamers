@@ -52,6 +52,12 @@ img{
     font-family: var(--fontHeading);
 }
 
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    font-family: var(--fontHeading);
+}
 
 /* .............Header Section.............. */
 header{
