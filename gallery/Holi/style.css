@@ -57,6 +57,13 @@ img{
     color: var(--highlight);
 }
 
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    font-family: var(--fontHeading);
+}
+
 
 /* .............Header Section.............. */
 header{
